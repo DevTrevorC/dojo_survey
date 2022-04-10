@@ -8,20 +8,22 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div>
-        <table>
-
-        </table>
-    </div>
+    <div id="result">
     <table>
         <tbody>
-            {% for key in ['name', 'location', 'language', 'highest-belt', 'comments'] %}
+            {% set titles = {'name' : 'Name', 'location' : 'Location', 'language' : 'Favorite Language', 'highest-belt' : 'Highest Belt', 'comments' : 'Comments'} %}
+            {% for key in titles %}
                 <tr>
-                    <th>{{key}}</th>
+                    <th>{{titles[key]}}</th>
                     <td>{{session[key]}}</td>
                 </tr>
             {% endfor %}
         </tbody>
     </table>
+    {% if session['news-letter'] == 'true' %}
+        <p>Thank you for signing up for our weekly news letter!</p>
+    {% endif %}
+    <div id="moveButton"><button onclick="window.location.href = '/'">Go Back</button></div>
+    </div>
 </body>
 </html>

@@ -9,7 +9,7 @@ input, textarea, select {
     background-color: #333;
 }
 
-form {
+form, #result {
     padding: .5em 1em;
     border: solid #c83;
     margin: auto;
@@ -19,4 +19,30 @@ form {
 
 h1 {
     color: #c83;
+}
+
+#result th {
+    text-align: left;
+}
+
+#result td {
+    text-align: right;
+}
+
+#moveButton {
+    width: 100%;
+    text-align: right;
+}
+
+#moveButton button {
+    background-color: #c83;
+    color: #eee;
+    font-weight: bolder;
+    border-radius: 15px;
+    border: solid #333;
+}
+
+#moveButton button:hover{
+    color: #222;
+    background-color: #eee;
 }
